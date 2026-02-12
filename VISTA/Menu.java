@@ -14,10 +14,12 @@ public class Menu {
                            2.   Gestionar Celular.
                            3.   Gestionar ventas.
                            4.   Gestionar marca.
-                           5.   Salir.
+                           5.   Reportes
+                           6.   ventas por mes
+                           7.   Salir.
                            """);
             op = new Scanner(System.in).nextInt();
-            while (op < 1 || op > 5) {
+            while (op < 1 || op > 7) {
                 System.out.println("Error, opcion no valida");
                 op = new Scanner(System.in).nextInt();
             }
@@ -38,8 +40,16 @@ public class Menu {
                     Menu_marca mar = new Menu_marca();
                     mar.menu();
                     break;
+                case 5:
+                    ReporteVentas rv = new ReporteVentas();
+                    rv.generarReporte();
+                case 6:
+                    Menu_ventastotales mvt = new Menu_ventastotales();
+                    mvt.menu();
+
+                
 
             }
-        } while (op != 5);
+        } while (op != 7);
     }
 }
